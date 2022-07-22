@@ -26,7 +26,7 @@ class Product(models.Model):
 
     name = models.CharField(max_length=255)
     price = models.IntegerField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ManyToManyField(Category)
 
     def __str__(self):
         return '{} | Category {}'.format(self.name, self.category)
